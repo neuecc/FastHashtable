@@ -15,13 +15,13 @@ namespace FastHashtable
 
         public override int GetHashCode(byte[] key)
         {
-            if (key == null) return 0;
+            if (key == null || key.Length == 0) return 0;
             return ByteArrayComparer.GetHashCode(key);
         }
 
         public override int GetHashCode(ArraySegment<byte> key)
         {
-            if (key.Array == null) return 0;
+            if (key.Array == null || key.Count == 0) return 0;
             return ByteArrayComparer.GetHashCode(key.Array, key.Offset, key.Count);
         }
 
