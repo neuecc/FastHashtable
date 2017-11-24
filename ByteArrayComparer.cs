@@ -51,6 +51,7 @@ namespace FastHashtable
             {
                 return false;
             }
+            if (xsCount == 0 && ysCount == 0) return true;
 
             fixed (byte* p1 = &xs[xsOffset])
             fixed (byte* p2 = &ys[ysOffset])
